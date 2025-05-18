@@ -1,0 +1,36 @@
+const translations = {
+    uk: {
+        title: "Еко Магазин",
+        productsTitle: "Наші товари",
+        product1Name: "Багаторазова соломинка",
+        product1Description: "Екологічна соломинка, яка допоможе зменшити використання пластику.",
+        product2Name: "Бамбукова зубна щітка",
+        product2Description: "Зубна щітка з бамбука, яка є біорозкладною.",
+        product3Name: "Еко пакет",
+        product3Description: "Міцний та багаторазовий пакет для покупок."
+    },
+    en: {
+        title: "Eco Store",
+        productsTitle: "Our Products",
+        product1Name: "Reusable Straw",
+        product1Description: "An eco-friendly straw that helps reduce plastic use.",
+        product2Name: "Bamboo Toothbrush",
+        product2Description: "A biodegradable toothbrush made from bamboo.",
+        product3Name: "Eco Bag",
+        product3Description: "A durable and reusable shopping bag."
+    }
+};
+
+const languageSwitcher = document.getElementById('language-switcher');
+
+languageSwitcher.addEventListener('change', (event) => {
+    const lang = event.target.value;
+    document.getElementById('site-title').innerText = translations[lang].title;
+    document.getElementById('products-title').innerText = translations[lang].productsTitle;
+    document.querySelectorAll('.product-name')[0].innerText = translations[lang].product1Name;
+    document.querySelectorAll('.product-description')[0].innerText = translations[lang].product1Description;
+    document.querySelectorAll('.product-name')[1].innerText = translations[lang].product2Name;
+    document.querySelectorAll('.product-description')[1].innerText = translations[lang].product2Description;
+    document.querySelectorAll('.product-name')[2].innerText = translations[lang].product3Name;
+    document.querySelectorAll('.product-description')[2].innerText = translations[lang].product3Description;
+});
